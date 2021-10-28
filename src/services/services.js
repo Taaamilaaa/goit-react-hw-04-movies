@@ -16,12 +16,10 @@ export const fetchPopularAPI = () => {
         return data.results;
     })
 };
-
-// export const fetchQueryAPI = (query) => {
-//     const queryUrl = 'search-movies';
-//     const url = `${BASE_URL}${API_KEYv3}${queryUrl}`
-//     return axios(url).then(({ data }) => {
-//         console.log(data.results);
-//         return data.results
-//     })
-// }
+// 
+export const fetchQueryAPI = (id) => {
+    const url = `${BASE_URL}movie/${id}${API_KEYv3}&language=en-US`
+    return axios(url).then(resp => {
+      return resp;       
+    })
+}
