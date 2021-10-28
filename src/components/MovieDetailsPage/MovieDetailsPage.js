@@ -1,7 +1,8 @@
 import { Link, NavLink } from "react-router-dom";
 import default_poster from "../../images/default_poster.jpg"
 
-export const MovieDetailsPage = ({ title, poster_path, overview, genres, date, popularity}) => {
+export const MovieDetailsPage = ({ id, title, poster_path, overview, genres, date, popularity}) => {
+  console.log(id);
   let poster = poster_path
     ? `https://image.tmdb.org/t/p/w300/${poster_path}`
     : default_poster;      
@@ -10,18 +11,18 @@ export const MovieDetailsPage = ({ title, poster_path, overview, genres, date, p
     <section>
        <div>
        <Link to ="/"> <button>Go back</button></Link>
-        <img src={poster} alt={title} />
+        <img src={poster} alt='' />
       </div>
 
       <div>
-        <h1>{title}<span>({date})</span></h1>
+        <h1>{title}<span>(date)</span></h1>
         <p>
-          User score: <span>{ popularity}</span>
+          User score: <span> popularity</span>
         </p>
         <h2>Overview</h2>
          <p> {overview}</p>
         <h2>Genres</h2>       
-         <ul> {genres.map(({name, id}) => <li key = {id}>{name}</li>)} </ul>
+         {/* <ul> {genres.map(({name, id}) => <li key = {id}>{name}</li>)} </ul> */}
       </div>
 
       <div>

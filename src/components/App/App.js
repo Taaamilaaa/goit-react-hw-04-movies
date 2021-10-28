@@ -8,15 +8,17 @@ import { fetchQueryAPI } from "../../services/services";
 
 
 const App = () => {
-   
+  const [movieId, setMovieId] = useState('');
+  ///////////////////////////////////
   // const [genres, setGenres] = useState([]);
   // const [overview, setOverview] = useState("");
   // const [name, setName] = useState("");
   // const [poster, setPoster] = useState("");
-
+///////////////////////////////////
 
   const selectedMovieId = (id) => {
-    
+    setMovieId(id)
+///////////////////////////////
     // fetchQueryAPI(id).then(({ data }) => {
     //   console.log(data);
     //   const {       
@@ -34,16 +36,16 @@ const App = () => {
     //     setName(name);
     //   } setName(title);
 
-    
+
     // });
- 
+
     // setGenres([]);
     // setOverview("");
     // setName("");
-   
-   
-  };
+/////////////////////////////////
 
+  };
+console.log(movieId);
   return (
     <div className="App">
       <Navigation />
@@ -55,12 +57,13 @@ const App = () => {
       </Route>
       <Route path="/movies">
         <MoviesPage
-      poster_path = {poster}
-      
-          title={name}
-       
-          overview={overview}
-          genres={genres}
+          id = {movieId}
+          ///////////////////
+          // poster_path={poster}
+          // title={name}
+          // overview={overview}
+          // genres={genres}
+          ////////////////////
         />
       </Route>
     </div>
