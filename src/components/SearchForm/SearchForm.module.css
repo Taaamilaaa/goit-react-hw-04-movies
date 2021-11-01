@@ -1,0 +1,33 @@
+.form {
+  padding-bottom: 30px;
+}
+.input {
+  width: 30%;
+  height: 35px;
+  border: none;
+  background-color: rgba(37, 71, 93, 0.363);
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 3px;
+  margin-right: 45px;
+  color: rgba(19, 124, 101, 0.959);
+}
+.input::placeholder {
+  color: rgba(19, 124, 101, 0.959);
+  padding-left: 15px;
+}
+.input:hover {
+  border: none;
+}
+
+.button {
+  font-size: 24px;
+  width: 90px;
+  height: 35px;
+  border: none;
+  border-radius: 3px;
+  background-color: rgba(19, 91, 124, 0.26);
+}
+.button:hover {
+  color: rgba(19, 108, 124, 0.753);
+}

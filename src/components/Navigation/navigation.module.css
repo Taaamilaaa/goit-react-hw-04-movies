@@ -6,7 +6,7 @@
 }
 .navLink {
   text-decoration: none;
-  color: rgba(8, 25, 39, 0.883);
+  color: rgba(19, 124, 101, 0.959);
   font-size: 20px;
   font-weight: 700;
 }
@@ -14,5 +14,5 @@
   margin-right: 25px;
 }
 .activeNavLink {
-  color: rgb(248, 2, 2);
+  color: rgba(248, 2, 2, 0.541);
 }

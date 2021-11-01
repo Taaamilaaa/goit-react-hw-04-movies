@@ -1,71 +1,29 @@
 import "./App.css";
-import { useState, useEffect } from "react";
-import { Route } from "react-router";
-import { Navigation } from "../Navigation/Navigation";
-import { HomePage } from "../pages/HomePage";
-import { MoviesPage } from "../pages/MoviesPage";
-import { fetchQueryAPI } from "../../services/services";
+import { Route, Switch } from 'react-router-dom';
+import { lazy, Suspense } from 'react';
 
+const Navigation = lazy(() => import('../Navigation/Navigation'));
+const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
+const MoviesPage = lazy(() => import('../pages/MoviesPage/MoviesPage'));
 
-const App = () => {
-  const [movieId, setMovieId] = useState('');
-  ///////////////////////////////////
-  // const [genres, setGenres] = useState([]);
-  // const [overview, setOverview] = useState("");
-  // const [name, setName] = useState("");
-  // const [poster, setPoster] = useState("");
-///////////////////////////////////
+const App = () => {  
 
-  const selectedMovieId = (id) => {
-    setMovieId(id)
-///////////////////////////////
-    // fetchQueryAPI(id).then(({ data }) => {
-    //   console.log(data);
-    //   const {       
-    //     genres,
-    //     overview,
-    //     title,
-    //     name,
-    //     poster_path
-    //   } = data;
-
-    //   setPoster(poster_path);
-    //   setGenres(genres);
-    //   setOverview(overview);
-    //   if (!title) {
-    //     setName(name);
-    //   } setName(title);
-
-
-    // });
-
-    // setGenres([]);
-    // setOverview("");
-    // setName("");
-/////////////////////////////////
-
-  };
-console.log(movieId);
   return (
-    <div className="App">
+    <div className="container">
+      <Suspense className = "title" fallback = {<h2>Please wait, I'm loading . . . </h2>}>
       <Navigation />
-      <Route path="/" exact>
-        <HomePage
-          selectedMovieId={selectedMovieId}
+      <Switch>
+         <Route path="/" exact>
+        <HomePage        
           title={"Trending today))"}
         />
       </Route>
       <Route path="/movies">
-        <MoviesPage
-          id = {movieId}
-          ///////////////////
-          // poster_path={poster}
-          // title={name}
-          // overview={overview}
-          // genres={genres}
-          ////////////////////
+        <MoviesPage title={"Find the movie))"}
         />
       </Route>
+      </Switch>
+      </Suspense> 
     </div>
   );
 };
