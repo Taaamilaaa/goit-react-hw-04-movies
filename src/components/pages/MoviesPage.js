@@ -8,7 +8,7 @@ export const MoviesPage = ({poster, overview, genres, title}) => {
   return (
       <>
           
-        <MovieDetailsPage title={ title}  poster={poster} overview={ overview} genres={genres} />
+      <MovieDetailsPage title={ title}  poster={poster} overview={ overview} genres={genres} />
       <Route exact path = "/movies/:movieId/cast">       
         <Cast />
       </Route>

@@ -1,8 +1,11 @@
 import { Link, NavLink } from "react-router-dom";
-import default_poster from "../../images/default_poster.jpg"
+import default_poster from "../../images/default_poster.jpg";
+import {fetchMovieById} from "../../services/services"
 
 export const MovieDetailsPage = ({ id, title, poster_path, overview, genres, date, popularity}) => {
-  console.log(id);
+  console.log();
+// fetchMovieById
+
   let poster = poster_path
     ? `https://image.tmdb.org/t/p/w300/${poster_path}`
     : default_poster;      

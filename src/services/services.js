@@ -17,7 +17,7 @@ export const fetchPopularAPI = () => {
     })
 };
 // 
-export const fetchQueryAPI = (id) => {
+export const fetchMovieById = (id) => {
     const url = `${BASE_URL}movie/${id}${API_KEYv3}&language=en-US`
     return axios(url).then(resp => {
       return resp;       
