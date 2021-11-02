@@ -3,14 +3,14 @@ import default_poster from "../../images/default_poster.jpg";
 import styles from './MoviesList.module.css'
 
 export const MoviesList = ({ arrOfMovies, location }) => {
-  
+
   return (
     <ul className = {styles.list}>
       {arrOfMovies.map(({ id, title, name, poster_path }) => {
         let poster = poster_path
           ? `https://image.tmdb.org/t/p/w300/${poster_path}`
           : default_poster;
-        
+       
         return (
           <li key={id} className = {styles.item}>
             <Link className = {styles.link}

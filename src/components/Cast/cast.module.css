@@ -1,0 +1,32 @@
+.section {
+}
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 2vw;
+}
+.item {
+  font-size: 18px;
+  padding: 5px;
+  background: rgba(14, 34, 47, 0.363);
+  text-align: center;
+
+  border: 1px solid rgba(16, 14, 42, 0.513);
+  border-radius: 3px;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.img {
+  width: 100%;
+  height: auto;
+}
+.content {
+  color: rgb(129, 143, 132);
+}
+.name {
+  font-size: 24px;
+  color: rgba(19, 124, 101, 0.959);
+}

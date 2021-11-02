@@ -11,7 +11,7 @@ export const fetchPopularAPI = () => {
     })
 };
 
-//
+
 export const fetchMovieByQuery = (query) => {
   console.log(query);
   const url = `${BASE_URL}search/movie/${API_KEYv3}&language=en-US&query=${query}&page=1&include_adult=false`
@@ -19,10 +19,28 @@ export const fetchMovieByQuery = (query) => {
       return resp;       
     })
 }
-//  movie/{movie_id}?api_key=<<api_key>>&language=en-US
+
 export const fetchMovieById = (id) => {
   const url = `${BASE_URL}movie/${id}${API_KEYv3}&language=en-US`;
-  console.log(url);
+   return axios(url).then(resp => {
+      
+      return resp;       
+    })
+}
+
+export const fetchMovieActorsById = (id) => {
+  const url = `${BASE_URL}movie/${id}/credits${API_KEYv3}&language=en-US`;
+ 
+  return axios(url).then(resp => {
+      console.log(resp);
+      return resp;       
+    })
+}
+//  movie/{movie_id}/reviews?api_key=<<api_key>>&language=en-US&page=1
+
+export const fetchMovieOverviewById = (id) => {
+  const url = `${BASE_URL}movie/${id}/reviews${API_KEYv3}&language=en-US&page=1`;
+ 
   return axios(url).then(resp => {
       console.log(resp);
       return resp;       

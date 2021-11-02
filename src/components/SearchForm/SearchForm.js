@@ -16,7 +16,7 @@ export const SearchForm = ({ onSearchSubmit, title}) => {
   
     return(
     <form className={styles.form} onSubmit={handleSearchSubmit}>
-      <label className="title">{title}</label>
+      <label className={styles.title}>{title}</label>
         <input
           name="query"
           value={query}
@@ -24,7 +24,7 @@ export const SearchForm = ({ onSearchSubmit, title}) => {
                 onChange={handleSearchChange}
                 className={styles.input}
         />
-        <button className={styles.button} type="submit">search</button>
+        <button className={styles.button} type="submit">SEARCH</button>
       </form>
     )
 }

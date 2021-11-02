@@ -17,8 +17,10 @@ function HomePage({ title }){
   useEffect(() => {
     fetchPopularAPI().then((moviesArr) => {
       setMovies(moviesArr);
+    }).catch(error => {
+      return alert(error.massage)
     });   
-  });
+  }, []);
 
   return (
     <>

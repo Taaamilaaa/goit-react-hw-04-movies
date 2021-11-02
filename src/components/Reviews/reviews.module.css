@@ -1,0 +1,21 @@
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.item {
+  font-size: 18px;
+  padding: 20px;
+  background: rgba(14, 34, 47, 0.363);
+
+  color: rgb(126, 149, 129);
+  border: 1px solid rgba(182, 182, 185, 0.513);
+  border-radius: 3px;
+  margin-bottom: 20px;
+  max-height: 350px;
+}
+.defaultText {
+  font-size: 24px;
+  padding: 20px;
+  color: rgb(126, 149, 129);
+}
