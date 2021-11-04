@@ -1,18 +1,16 @@
-import { fetchPopularAPI } from "../../../services/services";
-import { useHistory, useLocation } from 'react-router';
+import { fetchPopularAPI } from "../../services/services";
+import { useLocation } from 'react-router';
 import { useState, useEffect } from "react";
 
 
 // import styles from './homePage.module.css';
-import {MoviesList} from '../../MoviesList/MoviesList'
+import {MoviesList} from '../../components/MoviesList/MoviesList'
 
 
 function HomePage({ title }){
   const [movies, setMovies] = useState([]);
 
-  const location = useLocation();
-  // const history = useHistory();
-    
+  const location = useLocation();    
   
   useEffect(() => {
     fetchPopularAPI().then((moviesArr) => {

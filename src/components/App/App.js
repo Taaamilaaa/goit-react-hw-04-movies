@@ -3,9 +3,9 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 
 const Navigation = lazy(() => import('../Navigation/Navigation'));
-const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
-const MoviesPage = lazy(() => import('../pages/MoviesPage/MoviesPage'));
-const MovieDetailsPage = lazy(() => import('../pages/MovieDetailsPage/MovieDetailsPage'));
+const HomePage = lazy(() => import('../../pages/HomePage/HomePage'));
+const MoviesPage = lazy(() => import('../../pages/MoviesPage/MoviesPage'));
+const MovieDetailsPage = lazy(() => import('../../pages/MovieDetailsPage/MovieDetailsPage'));
 
 const App = () => {  
 

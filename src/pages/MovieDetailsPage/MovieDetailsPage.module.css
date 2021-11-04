@@ -41,20 +41,7 @@ h2 {
   font-weight: bold;
   color: rgba(19, 124, 101, 0.959);
 }
-.button {
-  color: rgba(212, 230, 226, 0.575);
-  display: block;
-  padding: 0;
-  margin: 0;
-  text-decoration: none;
 
-  font-size: 14px;
-  width: 90px;
-  height: 35px;
-  border: none;
-  border-radius: 3px;
-  background-color: rgba(19, 91, 124, 0.26);
-}
 .link {
   text-decoration: none;
   color: rgba(19, 124, 101, 0.959);

@@ -4,12 +4,16 @@ import { useState } from "react";
 export const SearchForm = ({ onSearchSubmit, title}) => {
   const [query, setQuery] = useState("");
 
-   const handleSearchChange = (e) => {
-     setQuery(e.target.value.toLowerCase());
-    
-  };
+  const handleSearchChange = (e) => setQuery(e.target.value.toLowerCase());
+
   const handleSearchSubmit = (e) => {
     e.preventDefault();
+    
+    if (query.trim() === "") {
+     alert("Please, enter your favorite movie!!!");
+      return;
+    };   
+    
     onSearchSubmit(query);
      setQuery("");
   }

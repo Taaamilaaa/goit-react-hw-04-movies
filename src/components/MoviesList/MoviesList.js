@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import default_poster from "../../images/default_poster.jpg";
 import styles from './MoviesList.module.css'
 
-export const MoviesList = ({ arrOfMovies, location }) => {
+export const MoviesList = ({ arrOfMovies, location}) => {
 
   return (
     <ul className = {styles.list}>
@@ -17,7 +17,7 @@ export const MoviesList = ({ arrOfMovies, location }) => {
               to={{                
                 pathname: `/movies/:${id}`,
                 state: {
-                  from: { location, label: `back to HOME PAGE` },
+                  from: location,
                 },
               }}
             >

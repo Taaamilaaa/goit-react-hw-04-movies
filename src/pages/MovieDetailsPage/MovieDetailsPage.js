@@ -1,15 +1,16 @@
-import { Link, NavLink, useRouteMatch } from "react-router-dom";
+import { NavLink, useRouteMatch, useHistory, useLocation} from "react-router-dom";
 import { useParams, Route} from "react-router";
-import { fetchMovieById } from "../../../services/services";
-import default_poster from "../../../images/default_poster.jpg";
+import { fetchMovieById } from "../../services/services";
+import default_poster from "../../images/default_poster.jpg";
 import { useEffect, useState, Suspense, lazy } from "react";
+import { Button } from "../../components/Button/Button";
  
 // import default_noData from "../../../images/default_noData.png"
 
 import styles from "./MovieDetailsPage.module.css";
 
-const Cast = lazy(() => import('../../Cast/Cast'));
-const Reviews = lazy(() => import('../../Reviews/Reviews'));
+const Cast = lazy(() => import('../../components/Cast/Cast'));
+const Reviews = lazy(() => import('../../components/Reviews/Reviews'));
 
 function MovieDetailsPage() {
   const params = useParams();
@@ -20,13 +21,19 @@ function MovieDetailsPage() {
   const [vote, setVote] = useState(null);
   const [genres, setGenres] = useState([]);
   const [date, setDate] = useState(null);
-
-
+  
+  const history = useHistory();
+  const location = useLocation();
+ 
   const paramsId = params.movieId.slice(1);
 
   useEffect(() => {
+    
     fetchMovieById(paramsId).then(({ data }) => {
-      const {
+      if (data === "undefined") {
+        return;
+     }
+     const {
         title,
         name,
         poster_path,
@@ -34,7 +41,8 @@ function MovieDetailsPage() {
         genres,
         vote_count,
         release_date,
-      } = data;      
+      } = data;
+     
       setPoster(
         `https://image.tmdb.org/t/p/w300/${poster_path}` ?? default_poster
       );
@@ -51,17 +59,16 @@ function MovieDetailsPage() {
     });
     
   }, [paramsId]);
-
+  const goHome = () => {
+    history.push(location?.state?.from ?? '/');
+    console.log(history);
+  }
+  
   return (
     <>
       {paramsId && (
         <section className={styles.section}>
-          <Link className={styles.link} to="/">
-          
-            <button type="button" className={styles.button}>
-              Go HOME
-            </button>
-          </Link>
+          <Button onClick={ goHome} text ="Go back"/>
           <h1 className={styles.title}>
             {title}
             <span>({date})</span>
@@ -91,7 +98,10 @@ function MovieDetailsPage() {
                   className={styles.link}
                   activeClassName={styles.activeLink}
                   exact
-                  to={`${url}/cast`}
+                  to={{
+                pathname: `${url}/cast`,
+                state: { ...location.state },
+              }}
                 >
                   Cast:
                 </NavLink>
@@ -100,7 +110,10 @@ function MovieDetailsPage() {
                 <NavLink
                   className={styles.link}
                   activeClassName={styles.activeLink}
-                  to={`${url}/reviews`}
+                  to={{
+                pathname: `${url}/reviews`,
+                state: { ...location.state },
+              }}
                 >
                   Reviews:
                 </NavLink>
