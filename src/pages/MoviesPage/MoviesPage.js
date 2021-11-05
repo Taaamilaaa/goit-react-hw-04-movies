@@ -18,7 +18,7 @@ function MoviesPage({ title }) {
   const onSearchSubmit = (query) => {
     setQuery(query);
     history.push({ ...location, search: `query=${query}` });
-    console.log(history);
+   
   };
 
   useEffect(() => {

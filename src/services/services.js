@@ -13,8 +13,8 @@ export const fetchPopularAPI = () => {
 
 
 export const fetchMovieByQuery = (query) => {
-  console.log(query);
-  const url = `${BASE_URL}search/movie/${API_KEYv3}&language=en-US&query=${query}&page=1&include_adult=false`
+
+  const url = `${BASE_URL}search/movie${API_KEYv3}&language=en-US&query=${query}&page=1&include_adult=false`
     return axios(url).then(resp => {
       return resp;       
     }).catch(error => error);
