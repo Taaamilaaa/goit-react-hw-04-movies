@@ -36,7 +36,7 @@ export const fetchMovieActorsById = (id) => {
       return resp;       
     }).catch(error => error);
 }
-//  movie/{movie_id}/reviews?api_key=<<api_key>>&language=en-US&page=1
+
 
 export const fetchMovieOverviewById = (id) => {
   const url = `${BASE_URL}movie/${id}/reviews${API_KEYv3}&language=en-US&page=1`;
