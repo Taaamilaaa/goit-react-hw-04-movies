@@ -32,8 +32,7 @@ export const fetchMovieActorsById = (id) => {
   const url = `${BASE_URL}movie/${id}/credits${API_KEYv3}&language=en-US`;
  
   return axios(url).then(resp => {
-      console.log(resp);
-      return resp;       
+            return resp;       
     }).catch(error => error);
 }
 
@@ -42,7 +41,7 @@ export const fetchMovieOverviewById = (id) => {
   const url = `${BASE_URL}movie/${id}/reviews${API_KEYv3}&language=en-US&page=1`;
  
   return axios(url).then(resp => {
-      console.log(resp);
+  
       return resp;       
     }).catch(error => error);
 }
